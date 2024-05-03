@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} relative bg-slate-100`}>
+      <body className={`${montserrat.className} relative bg-slate-100 sm:pb-14`}>
         {children}
         </body>
     </html>

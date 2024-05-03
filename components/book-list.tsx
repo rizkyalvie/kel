@@ -11,13 +11,13 @@ export function TopFiveList() {
 
   return (
     <section
-      className="mt-10 mb-10"
+      className="w-[18rem] sm:w-[64.5rem] mt-10"
     >
       <SectionHeading>
         My Top 5
       </SectionHeading>
       <div
-        className="flex gap-5"
+        className="flex flex-col gap-1 sm:flex-row sm:gap-5"
       >
         {myTopFive.map(books => (
           <React.Fragment key={books.id}>
@@ -33,13 +33,13 @@ export function BookList() {
 
   return (
     <section
-      className="mb-10"
+      className="w-[18rem] sm:w-[64.5rem] mt-10 mb-10"
     >
       <SectionHeading>
         Book List
       </SectionHeading>
       <div
-        className="max-w-[65rem] flex flex-wrap gap-5 "
+        className="flex flex-col gap-1 sm:w-[70rem] sm:flex-row sm:flex-wrap sm:gap-5 "
       >
         {bookDb.map(books => (
           <React.Fragment key={books.id}>
@@ -61,14 +61,14 @@ async function BookCard({id}: {id: string}) {
 
   return (
     <section
-      className="w-[12rem] border border-black/[0.1] px-4 py-3 rounded-lg relative bg-slate-50"
+      className="w-full sm:w-[12rem] border border-black/[0.1] px-2 py-1 sm:px-4 sm:py-3 sm:rounded-lg sm:relative sm:bg-slate-50"
     >
       <Link
          href={`/detail?id=${id}`}
-         className="flex flex-col justify-center items-center"
+         className="flex h-[4.2rem] gap-2 sm:flex-col sm:h-[20rem] overflow-hidden sm:justify-center sm:items-center"
       >
         <div
-          className="w-[10rem] h-[12rem] overflow-hidden flex justify-center items-center"
+          className="w-[4rem] h-[rem] sm:w-[10rem] sm:h-[12rem] overflow-hidden sm:flex sm:justify-center sm:items-center"
         >
         <Image 
           src={imageUrl}
@@ -78,10 +78,10 @@ async function BookCard({id}: {id: string}) {
         />
         </div>
         <div
-          className="w-[10rem] mt-2"
+          className="sm:w-[10rem] sm:mt-2"
         >
           <p
-            className="text-xl mb-1 h-14 overflow-hidden"
+            className="sm:text-xl sm:mb-1 sm:h-14 sm:overflow-hidden"
           >{bookDetails.title}</p>
           <small
           >By <span className="italic">{
