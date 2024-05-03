@@ -3,7 +3,7 @@
 import React from 'react'
 import { useSearchParams } from 'next/navigation'
 import { HeaderDetail } from '@/components/header'
-import GetBookData from './bookDetail'
+import GetBookData from '../../components/bookDetail'
 
 
 function BookDetail() {
