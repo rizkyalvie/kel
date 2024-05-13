@@ -1,7 +1,7 @@
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 import { myTopFiveProps } from "./types";
-import fetchBook from '@/api/get-books'
+import fetchBook from '@/app/api/books/route'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))

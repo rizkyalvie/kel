@@ -61,7 +61,7 @@ async function BookCard({id}: {id: string}) {
 
   return (
     <section
-      className="w-full sm:w-[12rem] border border-black/[0.1] px-2 py-1 sm:px-4 sm:py-3 sm:rounded-lg sm:relative sm:bg-slate-50"
+      className="w-full sm:w-[12rem] border border-black/[0.1] px-2 py-1 sm:px-4 sm:py-3 sm:rounded-lg sm:relative bg-slate-50"
     >
       <Link
          href={`/detail?id=${id}`}

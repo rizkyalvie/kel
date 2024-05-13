@@ -22,7 +22,7 @@ export function HeaderDetail() {
   return (
     <header>
       <div
-      className="w-full py- text-center sm:py-8 sm:px-[15rem]">
+      className="w-full py-3 text-center sm:py-8 sm:px-[15rem]">
         <h1 className={`${bigShoulders.className} text-3xl`}>
         <Link 
         href="/"

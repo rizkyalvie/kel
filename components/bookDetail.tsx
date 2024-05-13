@@ -16,7 +16,7 @@ export default async function GetBookData({bookId}: {bookId: string | null}) {
         className="px-[1rem]"
       >
       <div
-        className="text-center sm:px-[15rem] sm:mt-9 sm:flex gap-2 sm:gap-5"
+        className="text-center sm:px-[15rem] mt-4 sm:flex gap-2 sm:gap-5"
       >
         <div
           className="flex justify-center sm:w-[20rem] sm:h-[25rem] sm:overflow-hidden"
