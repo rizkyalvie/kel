@@ -8,6 +8,6 @@ export const getPost = async (id: string | null) => {
     const res = await axios.get(BASE_URL + id);
     return res.data;
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };
