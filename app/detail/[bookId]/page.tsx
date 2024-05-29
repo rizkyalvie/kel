@@ -4,6 +4,7 @@ import { HeaderDetail } from "@/components/header";
 
 import { getPost } from "@/actions/get-book";
 import { Industry } from "@/lib/types";
+import { showPrice } from "@/lib/utils";
 
 export default async function BookDetail({
   params,
@@ -13,6 +14,7 @@ export default async function BookDetail({
   const bookData = await getPost(params.bookId);
   const bookDetail = bookData!.volumeInfo;
   const publicationDate = moment(bookDetail.publishedDate).format("MMMM YYYY");
+  const resultPrice = await showPrice(bookData.saleInfo.listPrice);
   return (
     <section>
       <HeaderDetail />
@@ -63,10 +65,7 @@ export default async function BookDetail({
               <p className="sm:text-xl font-semibold">Price</p>
               <p>
                 {bookData.saleInfo.listPrice
-                  ? new Intl.NumberFormat("id-ID", {
-                      style: "currency",
-                      currency: "IDR",
-                    }).format(bookData.saleInfo.listPrice.amount)
+                  ? resultPrice
                   : "No Price Available"}
               </p>
             </span>
