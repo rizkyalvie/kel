@@ -1,7 +1,7 @@
 const CC = require("currency-converter-lt");
 
 export async function showPrice(params: {
-  amount: number;
+  amount?: number;
   currencyCode: string;
 }) {
   const { amount, currencyCode } = params;
@@ -10,11 +10,11 @@ export async function showPrice(params: {
     const convertedValue = usdConverter(amount).then((res) => res);
     return idrFormat(await convertedValue);
   } else {
-    return idrFormat(amount);
+    return idrFormat(amount || 0);
   }
 }
 
-async function usdConverter(amount: number) {
+async function usdConverter(amount?: number) {
   let currencyConverter = new CC({
     from: "USD",
     to: "IDR",
@@ -25,9 +25,9 @@ async function usdConverter(amount: number) {
   return res;
 }
 
-function idrFormat(amount: number) {
+function idrFormat(amount?: number) {
   return new Intl.NumberFormat("id-ID", {
     style: "currency",
     currency: "IDR",
-  }).format(amount);
+  }).format(amount || 0);
 }
