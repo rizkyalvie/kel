@@ -4,7 +4,7 @@ import { HeaderDetail } from "@/components/header";
 
 import { getPost } from "@/actions/get-book";
 import { Industry } from "@/lib/types";
-import { showPrice } from "@/lib/utils";
+// import { showPrice } from "@/lib/utils";
 
 export default async function BookDetail({
   params,
@@ -14,7 +14,7 @@ export default async function BookDetail({
   const bookData = await getPost(params.bookId);
   const bookDetail = bookData!.volumeInfo;
   const publicationDate = moment(bookDetail.publishedDate).format("MMMM YYYY");
-  const resultPrice = await showPrice(bookData.saleInfo.retailPrice);
+  // const resultPrice = await showPrice(bookData.saleInfo.retailPrice);
   return (
     <section>
       <HeaderDetail />
@@ -61,14 +61,14 @@ export default async function BookDetail({
               <p className="sm:text-xl font-semibold">Pages</p>
               <p>{bookDetail.pageCount}</p>
             </span>
-            <span>
+            {/* <span>
               <p className="sm:text-xl font-semibold">Price</p>
               <p>
                 {bookData.saleInfo.listPrice
                   ? resultPrice
                   : "No Price Available"}
               </p>
-            </span>
+            </span> */}
           </div>
         </div>
         <div className="sm:px-[15rem] mt-5 mb-5 sm:mb-0 sm:mt-16">
