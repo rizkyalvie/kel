@@ -7,8 +7,8 @@ export async function showPrice(params: {
   const { amount, currencyCode } = params;
 
   if (currencyCode == "USD") {
-    const shit = usdConverter(amount).then((res) => res);
-    return idrFormat(await shit);
+    const convertedValue = usdConverter(amount).then((res) => res);
+    return idrFormat(await convertedValue);
   } else {
     return idrFormat(amount);
   }

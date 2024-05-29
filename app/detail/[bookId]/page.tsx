@@ -14,7 +14,7 @@ export default async function BookDetail({
   const bookData = await getPost(params.bookId);
   const bookDetail = bookData!.volumeInfo;
   const publicationDate = moment(bookDetail.publishedDate).format("MMMM YYYY");
-  const resultPrice = await showPrice(bookData.saleInfo.listPrice);
+  const resultPrice = await showPrice(bookData.saleInfo.retailPrice);
   return (
     <section>
       <HeaderDetail />
